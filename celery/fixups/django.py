@@ -253,7 +253,7 @@ class DjangoWorkerFixup(object):
                 close()
             except self.database_errors as exc:
                 str_exc = str(exc)
-                if 'closed' not in str_exc and 'not connected' not in str_exc:
+                if 'closed' not in str_exc and 'not connected' not in str_exc and 'end of file' not in str_exc and 'lost contact' not in str_exc:
                     raise
 
     def close_cache(self):
